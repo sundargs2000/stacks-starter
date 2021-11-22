@@ -12,13 +12,12 @@ jobs:
       
       - name: delete non release
         if: ${{ github.event.inputs.create_release == true }}
-        run: rm .github-new/ci
+        run: rm .github-new/ci.yml
 
-      - name: delete non release
+      - name: delete release
         if: ${{ github.event.inputs.create_release == false }}
         run: |
-          ls
-          rm .github-new/ci-release
+          rm .github-new/ci-release.yml
 
       - name: move the files
         run: |
