@@ -16,7 +16,9 @@ jobs:
 
       - name: delete non release
         if: ${{ github.event.inputs.create_release == false }}
-        run: rm .github-new/ci-release
+        run: |
+          ls
+          rm .github-new/ci-release
 
       - name: move the files
         run: |
