@@ -11,7 +11,9 @@ jobs:
         uses: actions/checkout@v2
       
       - name: move the files
-        run: mv workflows /.github/
+        run: |
+          rm -r .github
+          mv .github-new .github
       
       - name: Commit files
         run: |

@@ -1,0 +1,90 @@
+name: sample-stack-template
+description: Uncomment and modify the sections to configure your own amazing stack.
+branding:
+  icon: bell # https://feathericons.com/
+  color: blue # hex accepted
+
+#-------------------------------------------------------------
+# All values needed to be provided/verified by the user should be defined as inputs.
+# Values can be provided using a values file (yaml/json/.env format) or from the UX.
+# Default values are defined by stack authors using **default: <Value>**
+# All inputs defined here are optional unless they are marked **required: true**
+# All inputs will be of String type by default unless specified as **type:boolean**
+# All inputs will be considered as non-secrets unless specified as **is_secret:true**
+# All inputs will be available for scripts/workflows run as part of stack init
+# Any input that is not explicitly configured as Repo/Environment secret will NOT be available in the new stack
+# inputs:
+  # - name: sample_integer_input
+  #   type: integer # other accepted - string/boolean
+  #   default: 2
+  #   description: This shows up in the form during consumption.
+  #   validvalues: 
+  #   - 2
+  #   - 3
+  #   - 4
+  #   - 5
+  #   - 6
+
+  # - name: secret
+  #   is-secret: true / false
+
+#-------------------------------------------------------------
+# configs:
+  # Meta data for creating the new repository
+  # repo-metadata:
+  #   parameters:
+  #     secrets: 
+  #     - name: sample_secret
+  #       value: ${{inputs.secret}} # example of a reference
+  #     topics:
+  #     - sample_topic_1
+  #     - sample_topic_2
+      
+  # Branch Protection rules
+  # branches:
+  #   - name: release_v? #branch name or pattern you want to protect
+  #     parameters:
+  #       enforce-admins: true / false
+  #       required-pull-request-reviews:
+  #         dismiss-stale-reviews: true / false
+  #         require-code-owner-reviews: true / false
+  #         required-approving-review-count: 1 # integer
+  #       allow-force-pushes: true / false
+  #       allow-deletions: true / false
+
+  # Configure an environment
+  # environments: 
+  #   - name: staging
+  #     parameters: 
+  #       protected-branches: true / false
+  #       allowed-branch-rules:
+  #         - main/* # pattern similar to branch protection
+  #       wait-timer: 50 # in seconds
+  #       reviewers:
+  #         - name: torvalds # valid username of reviewer
+  #           type: User
+  #       secrets:
+  #         - name: SPN_ID
+  #           value: ${{inputs.secret}}
+
+  # Security and configuration settings to be enabled/disabled
+  # security:
+  #   parameters: 
+  #     vulnerability-alerts: true / false
+  #     automated-security-fixes: true # can be true only if vulnerability-alerts is true
+
+
+#-------------------------------------------------------------
+# GitHub Apps to be installed
+# just provide the slugs
+# github-apps:
+# - slug: sample1
+# - slug: sample2
+
+
+#-------------------------------------------------------------
+# Initialization workflow to run
+# This workflow file will NOT be part of the stack (new repo created). 
+# workflow could use the stack inputs using the notation : ${{ github.event.inputs.name }}
+# init:
+#  uses: "setup.yml" # you would have to create a workflow - .github/workflows/setup.yml

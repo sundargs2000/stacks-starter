@@ -7,7 +7,7 @@ jobs:
       - id: prepublish
         uses: github/stacks-pre-publish@v0
 
-# Uncomment the step below if you want a release to be created on every push if the validations are a success
+# Uncomment the step below if you want a release to be created on every push when the validations are a success
 #       - name: Create Release
 #         if: ${{ steps.prepublish.outputs.success == 'true' }}
 #         uses: actions/create-release@v1
