@@ -3,6 +3,13 @@ description: This is a stack to create a stack.
 branding:
   icon: layers
   color: blue
-  
+
+inputs:
+  - name: create_release
+    required: true
+    type: boolean
+    description: Should a release be created on every commit (Stacks can be consumed only through releases)?
+    default: false  
+
 init:
  uses: setup.yml
