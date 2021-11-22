@@ -10,15 +10,18 @@ jobs:
       - name: checkout the repo
         uses: actions/checkout@v2
       
-      - name: move the files
+      - name: move the file
         run: |
-          rm -r .github
-          mv .github-new .github
+          mkdir .github/stacks
+          mv ./instance-contents/new-stack.yml .github/stacks/stack.yml
+          rm ./README.md
+          mv ./instance-contents/README.md ./README.md
+          rm -r ./instance-contents
       
       - name: Commit files
         run: |
           git config --global user.name '${{github.actor}}'
           git config --global user.email '${{github.actor}}@users.noreply.github.com'
           git add -A
-          git commit -m "Added scaffolding and readme."
+          git commit -m "Added readme and stack template."
           git push
