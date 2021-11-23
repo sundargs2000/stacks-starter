@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: prepublish
-        uses: github/stacks-pre-publish@v0
+        uses: sundargs2000/stacks-pre-publish@master
 
 # uncomment the below step if you want a release to be created on every commit
       # - name: Create Release
@@ -14,5 +14,5 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       #   with:
-      #     tag_name: v1.${{ github.ref }}
+      #     tag_name: v1.${{ github.sha }}
       #     release_name: Release stack/${{ github.ref }}
