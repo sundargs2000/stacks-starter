@@ -8,7 +8,7 @@ inputs:
   - name: Is your stack gonna rock?
     default: true
     type: boolean
-    description: Currently, there is a limitation that stacks need to at least one input. It's getting removed soon. The answer here does not really matter but I have a hunch it's true.
+    description: Currently, there is a limitation that stacks need at least one input. It's getting removed soon. The answer here does not really matter but I have a hunch it's true.
 
 init:
  uses: setup.yml
