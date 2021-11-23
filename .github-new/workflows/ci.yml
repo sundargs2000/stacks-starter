@@ -1,8 +1,0 @@
-name: Run Pre Publish checks
-on: [push]
-jobs:
-  Explore-GitHub-Stacks:
-    runs-on: ubuntu-latest
-    steps:
-      - id: prepublish
-        uses: github/stacks-pre-publish@v0
