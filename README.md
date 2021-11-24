@@ -1,5 +1,5 @@
 [![Use this stack](https://github.com/stack-instance/badge.svg)](https://github.com/stack-instance?stack_template_owner=sundargs2000&stack_template_repo=stack-of-stacks)
-# Stack of Stacks ✨
+# Stacks Starter ✨
 Get started on authoring your first stack by consuming one 🤨. Start by clicking [here](https://github.com/stack-instance?stack_template_owner=sundargs2000&stack_template_repo=stack-of-stacks) or the button above.
 
 Then follow the instructions from the new readme in your stack instance.
